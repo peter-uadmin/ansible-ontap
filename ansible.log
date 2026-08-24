@@ -40,40 +40,40 @@ always to your playbook.  More information can be found at: https://github.com/a
 2025-11-25 10:04:46,582 p=4332 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:06:18,575 p=4355 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] **********************************************************************************************************
 2025-11-25 10:06:18,983 p=4355 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] ********************************************************************************************
-2025-11-25 10:06:18,984 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-25 10:06:18,984 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-25 10:06:19,412 p=4355 u=root n=ansible | TASK [Create Vserver] ************************************************************************************************************************
-2025-11-25 10:06:19,412 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:06:19,412 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:06:19,739 p=4355 u=root n=ansible | TASK [Create NFS LIF Node1] ******************************************************************************************************************
-2025-11-25 10:06:19,740 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.133', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-25 10:06:19,740 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.133', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-25 10:06:20,052 p=4355 u=root n=ansible | TASK [Start NFS] *****************************************************************************************************************************
-2025-11-25 10:06:20,053 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:06:20,053 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:06:20,385 p=4355 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] **********************************************************************************************
-2025-11-25 10:06:20,385 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:06:20,385 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:06:20,691 p=4355 u=root n=ansible | TASK [Add DNS Settings to svm] ***************************************************************************************************************
-2025-11-25 10:06:20,691 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:06:20,691 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:06:21,155 p=4355 u=root n=ansible | TASK [Create Volumes] ************************************************************************************************************************
-2025-11-25 10:06:21,155 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-25 10:06:21,416 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-25 10:06:21,673 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:06:21,155 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:06:21,416 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:06:21,673 p=4355 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-25 10:06:21,681 p=4355 u=root n=ansible | PLAY RECAP ***********************************************************************************************************************************
 2025-11-25 10:06:21,681 p=4355 u=root n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:08:20,584 p=4535 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] ********************************************
 2025-11-25 10:08:20,915 p=4535 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] ******************************
-2025-11-25 10:08:20,915 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-25 10:08:20,915 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-25 10:08:21,248 p=4535 u=root n=ansible | TASK [Create Vserver] **********************************************************
-2025-11-25 10:08:21,248 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:08:21,248 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:08:21,577 p=4535 u=root n=ansible | TASK [Create NFS LIF Node1] ****************************************************
-2025-11-25 10:08:21,577 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.133', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-25 10:08:21,577 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.133', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-25 10:08:21,897 p=4535 u=root n=ansible | TASK [Start NFS] ***************************************************************
-2025-11-25 10:08:21,897 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:08:21,897 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:08:22,238 p=4535 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] ********************************
-2025-11-25 10:08:22,239 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:08:22,239 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:08:22,550 p=4535 u=root n=ansible | TASK [Add DNS Settings to svm] *************************************************
-2025-11-25 10:08:22,550 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-25 10:08:22,550 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-25 10:08:22,907 p=4535 u=root n=ansible | TASK [Create Volumes] **********************************************************
-2025-11-25 10:08:22,907 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-25 10:08:23,164 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-25 10:08:23,415 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:08:22,907 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:08:23,164 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-25 10:08:23,415 p=4535 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-25 10:08:23,424 p=4535 u=root n=ansible | PLAY RECAP *********************************************************************
 2025-11-25 10:08:23,424 p=4535 u=root n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:08:32,197 p=4680 u=root n=ansible | PLAY [NetApp cluster2 System Setup] ********************************************
@@ -109,7 +109,7 @@ always to your playbook.  More information can be found at: https://github.com/a
 2025-11-25 10:17:57,756 p=4742 u=root n=ansible | localhost                  : ok=8    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:24:48,137 p=4888 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] **********************************************
 2025-11-25 10:24:48,780 p=4888 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] ********************************
-2025-11-25 10:24:48,781 p=4888 u=root n=ansible | failed: [localhost] (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13}) => {"ansible_loop_var": "item", "changed": false, "item": {"diskcount": 13, "name": "aggr1_cluster1_01_data", "node": "cluster1-01"}, "msg": "Error: failed to create aggregate: calling: storage/aggregates: got {'message': '\"cluster1-01\" is an invalid value for field \"node.name\" (<nodename>)', 'code': '2', 'target': 'node.name'}."}
+2025-11-25 10:24:48,781 p=4888 u=root n=ansible | failed: [localhost] (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13}) => {"ansible_loop_var": "item", "changed": false, "item": {"diskcount": 13, "name": "aggr1_cluster3_01_data", "node": "cluster3-01"}, "msg": "Error: failed to create aggregate: calling: storage/aggregates: got {'message': '\"cluster3-01\" is an invalid value for field \"node.name\" (<nodename>)', 'code': '2', 'target': 'node.name'}."}
 2025-11-25 10:24:48,782 p=4888 u=root n=ansible | PLAY RECAP ***********************************************************************
 2025-11-25 10:24:48,782 p=4888 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:25:15,535 p=4910 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
@@ -207,35 +207,35 @@ The offending line appears to be:
             ^ here
 
 2025-11-25 10:49:16,461 p=5557 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 10:49:16,827 p=5557 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 10:49:16,827 p=5557 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 10:49:16,828 p=5557 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 10:49:16,828 p=5557 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 10:49:16,829 p=5557 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 10:49:16,829 p=5557 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:50:19,006 p=5579 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 10:50:19,337 p=5579 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 10:50:19,337 p=5579 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 10:50:19,338 p=5579 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 10:50:19,338 p=5579 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 10:50:19,339 p=5579 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 10:50:19,339 p=5579 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:52:18,313 p=5602 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 10:52:18,639 p=5602 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 10:52:18,639 p=5602 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 10:52:18,639 p=5602 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 10:52:18,640 p=5602 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 10:52:18,640 p=5602 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 10:52:18,640 p=5602 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 10:53:45,765 p=5623 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 10:53:46,087 p=5623 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 10:53:46,087 p=5623 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 10:53:46,088 p=5623 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 10:53:46,088 p=5623 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 10:53:46,089 p=5623 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 10:53:46,089 p=5623 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:00:58,631 p=5646 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:00:58,951 p=5646 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:00:58,951 p=5646 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:00:58,952 p=5646 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:00:58,952 p=5646 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
@@ -257,86 +257,86 @@ The offending line appears to be:
      ^ here
 
 2025-11-25 11:02:28,976 p=5684 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:02:29,303 p=5684 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:02:29,303 p=5684 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:02:29,303 p=5684 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:02:29,303 p=5684 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:02:29,304 p=5684 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:02:29,304 p=5684 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:03:50,667 p=5706 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:03:50,983 p=5706 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:03:50,983 p=5706 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:03:50,983 p=5706 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:03:50,983 p=5706 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:03:50,984 p=5706 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:03:50,984 p=5706 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:04:53,616 p=5728 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:04:53,937 p=5728 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:04:53,937 p=5728 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:04:53,937 p=5728 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:04:53,938 p=5728 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:04:53,938 p=5728 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:04:53,938 p=5728 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:09:21,627 p=5751 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:09:21,948 p=5751 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:09:21,948 p=5751 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:09:21,948 p=5751 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:09:21,948 p=5751 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:09:21,949 p=5751 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:09:21,949 p=5751 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:09:33,164 p=5773 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:09:33,490 p=5773 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:09:33,490 p=5773 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:09:33,491 p=5773 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:09:33,491 p=5773 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:09:33,492 p=5773 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:09:33,493 p=5773 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:11:07,884 p=5796 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:11:08,211 p=5796 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:11:08,211 p=5796 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:11:08,211 p=5796 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:11:08,211 p=5796 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:11:08,212 p=5796 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:11:08,212 p=5796 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:15:03,036 p=5818 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:15:03,357 p=5818 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:15:03,357 p=5818 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:15:03,357 p=5818 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:15:03,357 p=5818 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:15:03,358 p=5818 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:15:03,358 p=5818 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 11:21:30,233 p=5844 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 11:21:30,557 p=5844 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 11:21:30,557 p=5844 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 11:21:30,557 p=5844 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 11:21:30,557 p=5844 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 11:21:30,558 p=5844 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 11:21:30,558 p=5844 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:05:53,927 p=5944 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:05:54,254 p=5944 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:05:54,254 p=5944 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:05:54,254 p=5944 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:05:54,254 p=5944 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error: ipspace name must be provided if scope is cluster, or vserver for svm scope."}
 2025-11-25 15:05:54,255 p=5944 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:05:54,255 p=5944 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:07:19,559 p=5968 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:07:19,931 p=5968 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:07:19,931 p=5968 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:07:19,932 p=5968 u=root n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
 2025-11-25 15:07:19,932 p=5968 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
-2025-11-25 15:07:19,932 p=5968 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error creating interface peer-lif-n1: calling: network/ip/interfaces: got {'message': '\"cluster1-02\" is an invalid value for field \"location.home_port.node.name\".', 'code': '53281680'}."}
+2025-11-25 15:07:19,932 p=5968 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error creating interface peer-lif-n1: calling: network/ip/interfaces: got {'message': '\"cluster3-02\" is an invalid value for field \"location.home_port.node.name\".', 'code': '53281680'}."}
 2025-11-25 15:07:19,933 p=5968 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:07:19,933 p=5968 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:09:57,327 p=5992 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:09:57,689 p=5992 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:09:57,689 p=5992 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:09:57,689 p=5992 u=root n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: NoneType: None
 2025-11-25 15:09:57,689 p=5992 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
-2025-11-25 15:09:57,690 p=5992 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error creating interface peer-lif-n1: calling: network/ip/interfaces: got {'message': '\"cluster1-02\" is an invalid value for field \"location.home_port.node.name\".', 'code': '53281680'}."}
+2025-11-25 15:09:57,690 p=5992 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error creating interface peer-lif-n1: calling: network/ip/interfaces: got {'message': '\"cluster3-02\" is an invalid value for field \"location.home_port.node.name\".', 'code': '53281680'}."}
 2025-11-25 15:09:57,690 p=5992 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:09:57,690 p=5992 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:10:26,024 p=6014 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:10:26,891 p=6014 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:10:26,891 p=6014 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:10:26,892 p=6014 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:10:26,892 p=6014 u=root n=ansible | changed: [localhost]
@@ -346,21 +346,21 @@ The offending line appears to be:
 2025-11-25 15:10:27,315 p=6014 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:10:27,315 p=6014 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:11:33,600 p=6052 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:11:33,926 p=6052 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:11:33,926 p=6052 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:11:33,927 p=6052 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:11:33,927 p=6052 u=root n=ansible | ok: [localhost]
 2025-11-25 15:11:33,932 p=6052 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:11:33,932 p=6052 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:11:54,365 p=6074 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:11:54,802 p=6074 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:11:54,802 p=6074 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:11:54,802 p=6074 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:11:54,802 p=6074 u=root n=ansible | changed: [localhost]
 2025-11-25 15:11:54,807 p=6074 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:11:54,807 p=6074 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:12:55,969 p=6109 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:12:56,367 p=6109 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:12:56,367 p=6109 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:12:56,368 p=6109 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:12:56,368 p=6109 u=root n=ansible | changed: [localhost]
@@ -369,7 +369,7 @@ The offending line appears to be:
 2025-11-25 15:12:56,608 p=6109 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:12:56,608 p=6109 u=root n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:13:11,036 p=6146 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:13:11,361 p=6146 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:13:11,361 p=6146 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:13:11,361 p=6146 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:13:11,361 p=6146 u=root n=ansible | ok: [localhost]
@@ -378,7 +378,7 @@ The offending line appears to be:
 2025-11-25 15:13:11,603 p=6146 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:13:11,603 p=6146 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:14:58,428 p=6185 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:14:58,750 p=6185 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:14:58,750 p=6185 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:14:58,751 p=6185 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:14:58,751 p=6185 u=root n=ansible | ok: [localhost]
@@ -387,7 +387,7 @@ The offending line appears to be:
 2025-11-25 15:14:59,066 p=6185 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:14:59,067 p=6185 u=root n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:15:11,380 p=6223 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:15:11,703 p=6223 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:15:11,703 p=6223 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:15:11,703 p=6223 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:15:11,703 p=6223 u=root n=ansible | ok: [localhost]
@@ -396,7 +396,7 @@ The offending line appears to be:
 2025-11-25 15:15:11,940 p=6223 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:15:11,940 p=6223 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:24:52,761 p=6298 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:24:53,168 p=6298 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:24:53,168 p=6298 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:24:53,168 p=6298 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:24:53,168 p=6298 u=root n=ansible | changed: [localhost]
@@ -405,7 +405,7 @@ The offending line appears to be:
 2025-11-25 15:24:53,476 p=6298 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:24:53,476 p=6298 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:25:04,641 p=6335 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:25:05,030 p=6335 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:25:05,030 p=6335 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:25:05,031 p=6335 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:25:05,031 p=6335 u=root n=ansible | changed: [localhost]
@@ -414,7 +414,7 @@ The offending line appears to be:
 2025-11-25 15:25:05,353 p=6335 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:25:05,353 p=6335 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:25:36,093 p=6373 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:25:36,492 p=6373 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:25:36,492 p=6373 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:25:36,492 p=6373 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:25:36,492 p=6373 u=root n=ansible | changed: [localhost]
@@ -424,7 +424,7 @@ The offending line appears to be:
 2025-11-25 15:25:36,770 p=6373 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:25:36,770 p=6373 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:28:27,311 p=6412 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:28:27,640 p=6412 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:28:27,640 p=6412 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:28:27,640 p=6412 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:28:27,640 p=6412 u=root n=ansible | ok: [localhost]
@@ -465,7 +465,7 @@ The offending line appears to be:
 2025-11-25 15:28:34,024 p=6449 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1764102513.9348145-6453-101320146559589/ /root/.ansible/tmp/ansible-tmp-1764102513.9348145-6453-101320146559589/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:28:34,028 p=6449 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1764102513.9348145-6453-101320146559589/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:28:34,240 p=6449 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1764102513.9348145-6453-101320146559589/ > /dev/null 2>&1 && sleep 0'
-2025-11-25 15:28:34,246 p=6449 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:28:34,246 p=6449 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:28:34,246 p=6449 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:28:34,247 p=6449 u=root n=ansible | ok: [localhost] => {
@@ -489,7 +489,7 @@ The offending line appears to be:
             "force_ontap_version": null,
             "force_subnet_association": null,
             "from_name": null,
-            "home_node": "cluster1-01",
+            "home_node": "cluster3-01",
             "home_port": "e0c",
             "hostname": "192.168.4.200",
             "http_port": null,
@@ -517,7 +517,7 @@ The offending line appears to be:
             "use_rest": "auto",
             "username": "admin",
             "validate_certs": false,
-            "vserver": "cluster1"
+            "vserver": "cluster3"
         }
     }
 }
@@ -623,7 +623,7 @@ NoneType: None
 2025-11-25 15:29:06,180 p=6488 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1764102546.0903728-6492-159273200765621/ /root/.ansible/tmp/ansible-tmp-1764102546.0903728-6492-159273200765621/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:29:06,184 p=6488 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1764102546.0903728-6492-159273200765621/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:29:06,467 p=6488 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1764102546.0903728-6492-159273200765621/ > /dev/null 2>&1 && sleep 0'
-2025-11-25 15:29:06,472 p=6488 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:29:06,472 p=6488 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:29:06,472 p=6488 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:29:06,473 p=6488 u=root n=ansible | changed: [localhost] => {
@@ -648,7 +648,7 @@ NoneType: None
             "force_ontap_version": null,
             "force_subnet_association": null,
             "from_name": null,
-            "home_node": "cluster1-01",
+            "home_node": "cluster3-01",
             "home_port": "e0c",
             "hostname": "192.168.4.200",
             "http_port": null,
@@ -676,7 +676,7 @@ NoneType: None
             "use_rest": "auto",
             "username": "admin",
             "validate_certs": false,
-            "vserver": "cluster1"
+            "vserver": "cluster3"
         }
     }
 }
@@ -782,7 +782,7 @@ NoneType: None
 2025-11-25 15:29:39,606 p=6526 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1764102579.5158722-6530-107146500578999/ /root/.ansible/tmp/ansible-tmp-1764102579.5158722-6530-107146500578999/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:29:39,610 p=6526 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1764102579.5158722-6530-107146500578999/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:29:39,821 p=6526 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1764102579.5158722-6530-107146500578999/ > /dev/null 2>&1 && sleep 0'
-2025-11-25 15:29:39,826 p=6526 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:29:39,826 p=6526 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:29:39,826 p=6526 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:29:39,826 p=6526 u=root n=ansible | ok: [localhost] => {
@@ -806,7 +806,7 @@ NoneType: None
             "force_ontap_version": null,
             "force_subnet_association": null,
             "from_name": null,
-            "home_node": "cluster1-01",
+            "home_node": "cluster3-01",
             "home_port": "e0c",
             "hostname": "192.168.4.200",
             "http_port": null,
@@ -834,7 +834,7 @@ NoneType: None
             "use_rest": "auto",
             "username": "admin",
             "validate_certs": false,
-            "vserver": "cluster1"
+            "vserver": "cluster3"
         }
     }
 }
@@ -936,7 +936,7 @@ NoneType: None
 2025-11-25 15:31:01,755 p=6565 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1764102661.6619074-6569-197625098346345/ /root/.ansible/tmp/ansible-tmp-1764102661.6619074-6569-197625098346345/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:31:01,759 p=6565 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1764102661.6619074-6569-197625098346345/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-25 15:31:02,058 p=6565 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1764102661.6619074-6569-197625098346345/ > /dev/null 2>&1 && sleep 0'
-2025-11-25 15:31:02,064 p=6565 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:31:02,064 p=6565 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:31:02,065 p=6565 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:31:02,065 p=6565 u=root n=ansible | changed: [localhost] => {
@@ -961,7 +961,7 @@ NoneType: None
             "force_ontap_version": null,
             "force_subnet_association": null,
             "from_name": null,
-            "home_node": "cluster1-01",
+            "home_node": "cluster3-01",
             "home_port": "e0c",
             "hostname": "192.168.4.200",
             "http_port": null,
@@ -989,7 +989,7 @@ NoneType: None
             "use_rest": "auto",
             "username": "admin",
             "validate_certs": false,
-            "vserver": "cluster1"
+            "vserver": "cluster3"
         }
     }
 }
@@ -1064,7 +1064,7 @@ NoneType: None
 2025-11-25 15:31:02,339 p=6565 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:31:02,339 p=6565 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:31:28,407 p=6602 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ***********************************************************************
-2025-11-25 15:31:28,731 p=6602 u=root n=ansible | TASK [Create interface n1 cluster1] *******************************************************************
+2025-11-25 15:31:28,731 p=6602 u=root n=ansible | TASK [Create interface n1 cluster3] *******************************************************************
 2025-11-25 15:31:28,731 p=6602 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:31:28,731 p=6602 u=root n=ansible | ok: [localhost]
@@ -1074,7 +1074,7 @@ NoneType: None
 2025-11-25 15:31:28,997 p=6602 u=root n=ansible | PLAY RECAP ********************************************************************************************
 2025-11-25 15:31:28,997 p=6602 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:32:52,865 p=6641 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ****************************************************************************************
-2025-11-25 15:32:53,195 p=6641 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-25 15:32:53,195 p=6641 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-25 15:32:53,195 p=6641 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:32:53,195 p=6641 u=root n=ansible | ok: [localhost]
@@ -1084,7 +1084,7 @@ NoneType: None
 2025-11-25 15:32:53,462 p=6641 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-25 15:32:53,462 p=6641 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-25 15:38:28,305 p=6682 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ****************************************************************************************
-2025-11-25 15:38:28,638 p=6682 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-25 15:38:28,638 p=6682 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-25 15:38:28,639 p=6682 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-25 15:38:28,639 p=6682 u=root n=ansible | ok: [localhost]
@@ -1093,7 +1093,7 @@ NoneType: None
 2025-11-25 15:38:29,219 p=6682 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-25 15:38:29,219 p=6682 u=root n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 03:21:49,478 p=7265 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ****************************************************************************************
-2025-11-26 03:21:49,889 p=7265 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-26 03:21:49,889 p=7265 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-26 03:21:49,890 p=7265 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-26 03:21:49,890 p=7265 u=root n=ansible | ok: [localhost]
@@ -1103,21 +1103,21 @@ NoneType: None
 2025-11-26 03:21:50,933 p=7265 u=root n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 03:23:52,861 p=7304 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] ************************************************************************************
 2025-11-26 03:23:53,206 p=7304 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] **********************************************************************
-2025-11-26 03:23:53,206 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-26 03:23:53,206 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-26 03:23:54,482 p=7304 u=root n=ansible | TASK [Create Vserver] **************************************************************************************************
-2025-11-26 03:23:54,482 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 03:23:54,482 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 03:23:55,554 p=7304 u=root n=ansible | TASK [Create NFS LIF Node1] ********************************************************************************************
-2025-11-26 03:23:55,554 p=7304 u=root n=ansible | changed: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-26 03:23:55,554 p=7304 u=root n=ansible | changed: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-26 03:23:55,858 p=7304 u=root n=ansible | TASK [Start NFS] *******************************************************************************************************
-2025-11-26 03:23:55,858 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 03:23:55,858 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 03:23:56,201 p=7304 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] ************************************************************************
-2025-11-26 03:23:56,201 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 03:23:56,201 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 03:23:56,506 p=7304 u=root n=ansible | TASK [Add DNS Settings to svm] *****************************************************************************************
-2025-11-26 03:23:56,507 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 03:23:56,507 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 03:23:57,652 p=7304 u=root n=ansible | TASK [Create Volumes] **************************************************************************************************
-2025-11-26 03:23:57,652 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 03:23:57,900 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 03:23:58,149 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 03:23:57,652 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 03:23:57,900 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 03:23:58,149 p=7304 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-26 03:23:58,159 p=7304 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-26 03:23:58,159 p=7304 u=root n=ansible | localhost                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 03:30:20,703 p=7459 u=root n=ansible | PLAY [Snapmirror Create] ***********************************************************************************************
@@ -1426,40 +1426,40 @@ Collection                    Version
 2025-11-26 04:17:36,518 p=8500 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 2025-11-26 04:37:51,989 p=8564 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] ************************************************************************************
 2025-11-26 04:37:52,469 p=8564 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] **********************************************************************
-2025-11-26 04:37:52,469 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-26 04:37:52,469 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-26 04:37:53,416 p=8564 u=root n=ansible | TASK [Create Vserver] **************************************************************************************************
-2025-11-26 04:37:53,416 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:37:53,416 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:37:53,736 p=8564 u=root n=ansible | TASK [Create NFS LIF Node1] ********************************************************************************************
-2025-11-26 04:37:53,736 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-26 04:37:53,736 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-26 04:37:54,042 p=8564 u=root n=ansible | TASK [Start NFS] *******************************************************************************************************
-2025-11-26 04:37:54,042 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:37:54,042 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:37:54,396 p=8564 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] ************************************************************************
-2025-11-26 04:37:54,396 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:37:54,396 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:37:54,714 p=8564 u=root n=ansible | TASK [Add DNS Settings to svm] *****************************************************************************************
-2025-11-26 04:37:54,714 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:37:54,714 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:37:55,206 p=8564 u=root n=ansible | TASK [Create Volumes] **************************************************************************************************
-2025-11-26 04:37:55,206 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 04:37:55,461 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 04:37:55,711 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:37:55,206 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:37:55,461 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:37:55,711 p=8564 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-26 04:37:55,720 p=8564 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-26 04:37:55,720 p=8564 u=root n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 04:38:18,889 p=8712 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] ************************************************************************************
 2025-11-26 04:38:19,221 p=8712 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] **********************************************************************
-2025-11-26 04:38:19,222 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-26 04:38:19,222 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-26 04:38:19,552 p=8712 u=root n=ansible | TASK [Create Vserver] **************************************************************************************************
-2025-11-26 04:38:19,553 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:38:19,553 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:38:19,883 p=8712 u=root n=ansible | TASK [Create NFS LIF Node1] ********************************************************************************************
-2025-11-26 04:38:19,883 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-26 04:38:19,883 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-26 04:38:20,190 p=8712 u=root n=ansible | TASK [Start NFS] *******************************************************************************************************
-2025-11-26 04:38:20,190 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:38:20,190 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:38:20,542 p=8712 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] ************************************************************************
-2025-11-26 04:38:20,543 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:38:20,543 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:38:20,845 p=8712 u=root n=ansible | TASK [Add DNS Settings to svm] *****************************************************************************************
-2025-11-26 04:38:20,845 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 04:38:20,845 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 04:38:21,207 p=8712 u=root n=ansible | TASK [Create Volumes] **************************************************************************************************
-2025-11-26 04:38:21,207 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 04:38:21,468 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 04:38:21,726 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:38:21,207 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:38:21,468 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 04:38:21,726 p=8712 u=root n=ansible | ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-26 04:38:21,734 p=8712 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-26 04:38:21,734 p=8712 u=root n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 04:38:25,221 p=8857 u=root n=ansible | ERROR! the playbook: 2-full-playbook-cluster2.yml could not be found
@@ -1547,7 +1547,7 @@ Collection                    Version
 2025-11-26 04:42:09,728 p=9311 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-26 04:42:09,728 p=9311 u=root n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 04:46:11,772 p=9460 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ****************************************************************************************
-2025-11-26 04:46:12,099 p=9460 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-26 04:46:12,099 p=9460 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-26 04:46:12,100 p=9460 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-26 04:46:12,100 p=9460 u=root n=ansible | ok: [localhost]
@@ -1556,7 +1556,7 @@ Collection                    Version
 2025-11-26 04:46:12,342 p=9460 u=root n=ansible | PLAY RECAP *************************************************************************************************************
 2025-11-26 04:46:12,343 p=9460 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 04:47:59,719 p=9498 u=root n=ansible | PLAY [Create Cluster Peer Lifs] ****************************************************************************************
-2025-11-26 04:48:00,053 p=9498 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-26 04:48:00,053 p=9498 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-26 04:48:00,054 p=9498 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-26 04:48:00,054 p=9498 u=root n=ansible | ok: [localhost]
@@ -1599,7 +1599,7 @@ Collection                    Version
 2025-11-26 04:48:49,215 p=9552 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1764150529.125379-9556-115443662310663/ /root/.ansible/tmp/ansible-tmp-1764150529.125379-9556-115443662310663/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-26 04:48:49,219 p=9552 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1764150529.125379-9556-115443662310663/AnsiballZ_na_ontap_interface.py && sleep 0'
 2025-11-26 04:48:49,432 p=9552 u=root n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1764150529.125379-9556-115443662310663/ > /dev/null 2>&1 && sleep 0'
-2025-11-26 04:48:49,438 p=9552 u=root n=ansible | TASK [Create interface n1 cluster1] ************************************************************************************
+2025-11-26 04:48:49,438 p=9552 u=root n=ansible | TASK [Create interface n1 cluster3] ************************************************************************************
 2025-11-26 04:48:49,438 p=9552 u=root n=ansible | [WARNING]: Ignoring vserver with REST for non data SVM.
 
 2025-11-26 04:48:49,439 p=9552 u=root n=ansible | ok: [localhost] => {
@@ -1623,7 +1623,7 @@ Collection                    Version
             "force_ontap_version": null,
             "force_subnet_association": null,
             "from_name": null,
-            "home_node": "cluster1-01",
+            "home_node": "cluster3-01",
             "home_port": "e0c",
             "hostname": "192.168.4.200",
             "http_port": null,
@@ -1651,7 +1651,7 @@ Collection                    Version
             "use_rest": "auto",
             "username": "admin",
             "validate_certs": false,
-            "vserver": "cluster1"
+            "vserver": "cluster3"
         }
     }
 }
@@ -1998,20 +1998,20 @@ https://github.com/ansible-collections/netapp.ontap
 2025-11-26 06:41:14,445 p=11035 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-11-26 10:17:49,242 p=46936 u=root n=ansible INFO| PLAY [NetApp Cluster1 System Setup] ********************************************
 2025-11-26 10:17:49,738 p=46936 u=root n=ansible INFO| TASK [Create and Online New Data Aggregate Node1] ******************************
-2025-11-26 10:17:49,738 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2025-11-26 10:17:49,738 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'aggr1_cluster3_01_data', 'node': 'cluster3-01', 'diskcount': 13})
 2025-11-26 10:17:50,205 p=46936 u=root n=ansible INFO| TASK [Create Vserver] **********************************************************
-2025-11-26 10:17:50,206 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 10:17:50,206 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 10:17:50,629 p=46936 u=root n=ansible INFO| TASK [Create NFS LIF Node1] ****************************************************
-2025-11-26 10:17:50,629 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2025-11-26 10:17:50,629 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.4.134', 'netmask': '255.255.255.0', 'node': 'cluster3-01', 'vserver': 'svm1', 'home': 'e0c'})
 2025-11-26 10:17:51,024 p=46936 u=root n=ansible INFO| TASK [Start NFS] ***************************************************************
-2025-11-26 10:17:51,024 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 10:17:51,024 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 10:17:51,441 p=46936 u=root n=ansible INFO| TASK [Add NFS Export Rule Under Default Policy] ********************************
-2025-11-26 10:17:51,441 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 10:17:51,441 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 10:17:51,835 p=46936 u=root n=ansible INFO| TASK [Add DNS Settings to svm] *************************************************
-2025-11-26 10:17:51,835 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
+2025-11-26 10:17:51,835 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster3_01_data', 'aggr_list': 'aggr1_cluster3_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.4.169', 'domain': 'demo.netapp.com'})
 2025-11-26 10:17:52,295 p=46936 u=root n=ansible INFO| TASK [Create Volumes] **********************************************************
-2025-11-26 10:17:52,296 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 10:17:52,607 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
-2025-11-26 10:17:52,927 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 10:17:52,296 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 10:17:52,607 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2025-11-26 10:17:52,927 p=46936 u=root n=ansible INFO| ok: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster3_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
 2025-11-26 10:17:52,929 p=46936 u=root n=ansible INFO| PLAY RECAP *********************************************************************
 2025-11-26 10:17:52,929 p=46936 u=root n=ansible INFO| localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
