@@ -11,7 +11,7 @@
   name: user module
   vars:
     input: &input
-      hostname: "cluster1.demo.netapp.com"
+      hostname: "cluster3"
       username: "admin"
       password: "apix1234"
       https: true
