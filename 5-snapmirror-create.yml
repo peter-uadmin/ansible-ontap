@@ -4,7 +4,7 @@
   gather_facts: false
   vars:
     src_ontap: 192.168.4.200
-    src_name: cluster1
+    src_name: cluster3
     src_lif: 192.168.4.120
     src_vserver: svm1
     src_volume: vol1
