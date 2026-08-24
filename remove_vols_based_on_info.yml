@@ -11,7 +11,7 @@
      https: true
      validate_certs: false
   vars_files:
-   - var_cluster1.yml
+   - var_cluster3.yml
   tasks:
   - name: Gather facts
     na_ontap_info:
