@@ -1,0 +1,22 @@
+---
+- hosts: servers
+  vars:
+    hostname: 192.168.4.200
+    username: admin
+    password: apix1234
+    vserver: svm1
+    aggr: aggr1_cluster1_01_data
+    vol_name: ansibleVol
+    export_policy: ansible
+    nfs_lif : 192.168.4.134
+  tasks:
+  - name: Creates directory
+    file:
+     path: "/mnt/{{ vol_name }}"
+     state: directory
+  - name: mount
+    mount:
+     name: "/mnt/{{ vol_name }}"
+     src: "{{ nfs_lif }}:/{{ vol_name }}"
+     fstype: nfs
+     state: mounted
