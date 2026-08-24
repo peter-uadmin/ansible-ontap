@@ -19,7 +19,7 @@
         applications: http,ssh
         authentication_method: password
         set_password: bobdole1234566
-        hostname: "cluster1.demo.netapp.com"
+        hostname: "cluster3"
         role_name: vsadmin
         vserver:  "nas_svm"
         username: "admin"
