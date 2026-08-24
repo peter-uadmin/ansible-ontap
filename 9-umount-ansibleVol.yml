@@ -19,7 +19,7 @@
     https: true
     validate_certs: false
    vserver: svm1
-   aggr: aggr1_cluster1_01_data
+   aggr: aggr1_cluster3_01_data
    vol_name: ansibleVol
    nfs_lif : 192.168.4.134
   tasks   :
