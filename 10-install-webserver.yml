@@ -6,7 +6,7 @@
     username: admin
     password: apix1234
     vserver: svm1
-    aggr: aggr1_cluster1_01_data
+    aggr: aggr1_cluster3_01_data
     vol_name: webvol
     policy: ansible
   tasks:
