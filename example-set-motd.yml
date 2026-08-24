@@ -8,7 +8,7 @@
   tasks:
   - name: set banner
     na_ontap_motd:
-     vserver: cluster1
+     vserver: cluster3
      message: "Cluster wide MOTD set Ansible playbook"
      hostname: "{{ netapp_hostname }}"
      username: "{{ netapp_username }}"
