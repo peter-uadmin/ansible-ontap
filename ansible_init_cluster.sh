@@ -5,7 +5,7 @@
 # Title:        ansible_init_cluster.sh
 # Author:       Adrian Bronder
 # Date:         2020-09-03
-# Description:  Prepare primary storage cluster "cluster1" in LoD lab sl10599
+# Description:  Prepare primary storage cluster "cluster3" in LoD lab sl10599
 #               --> "Exploring the ONTAP REST API v1.2"
 #
 # URLs:         https://labondemand.netapp.com/lab/sl10599
@@ -22,7 +22,7 @@ REST_RESPONSE=`curl -s \
   -H "accept: application/hal+json"\
   -H "authorization: Basic YWRtaW46TmV0YXBwMSE="\
   -X GET\
-  "https://cluster1.demo.netapp.com/api/storage/aggregates?show_spares=true"`
+  "https://cluster3/api/storage/aggregates?show_spares=true"`
 
 ### STEP 2 - Create aggreagets, if spare count is sufficient
 
