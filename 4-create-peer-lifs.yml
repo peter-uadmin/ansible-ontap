@@ -22,16 +22,16 @@
       https: true
       validate_certs: false
   tasks:
-    - name: Create interface n1 cluster1
+    - name: Create interface n1 cluster3
       na_ontap_interface:
         state: present
         interface_name: peer-lif-cl1-n1
         home_port: e0c
-        home_node: cluster1-01
+        home_node: cluster3-01
         role: intercluster
         address: 192.168.4.120
         netmask: 255.255.255.0
-        vserver: cluster1
+        vserver: cluster3
         ipspace: Default
         <<: *login1
     - name: Create interface n1 cluster2
