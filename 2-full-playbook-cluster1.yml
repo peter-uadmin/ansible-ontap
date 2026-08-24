@@ -11,7 +11,7 @@
      validate_certs: false
      use_rest: Always
   vars_files:
-   - var_cluster1.yml
+   - var_cluster3.yml
   tasks:
   - name: Create and Online New Data Aggregate Node1
     netapp.ontap.na_ontap_aggregate:
