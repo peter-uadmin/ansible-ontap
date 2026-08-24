@@ -14,7 +14,7 @@
    - var_cluster1.yml
   tasks:
   - name: Create and Online New Data Aggregate Node1
-    netapp.ontap.na_ontap_aggregate
+    netapp.ontap.na_ontap_aggregate:
       state: present
       service_state: online
       nodes: "{{ item.node }}"
