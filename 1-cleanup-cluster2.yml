@@ -21,7 +21,7 @@
       vserver: svm21
     - name: cluster2-01_iscsi_lif_1
       vserver : svm21
-    - name: intercluster1
+    - name: intercluster3
       vserver : cluster2  
     igroups:
     - name: jumphost_igroup
