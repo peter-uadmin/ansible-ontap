@@ -3,7 +3,7 @@ node1name: cluster2-01
 ntpservers: 192.168.4.169 # Time Server
 
 peer_vserver: svm1
-peer_cluster: cluster1
+peer_cluster: cluster3
 dst_ontap: 192.168.4.200
 
 aggr:
