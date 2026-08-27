@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   gather_facts: false
-  name: NetApp cluster2 System Setup
+  name: NetApp cluster3 System Setup
   vars:
     login: &login
-     hostname: 192.168.4.102 # NetApp Cluster IP
+     hostname: 192.168.4.204 # NetApp Cluster IP
      username: admin # Cluster User
      password: apix1234 # Cluster Password
      https: true
