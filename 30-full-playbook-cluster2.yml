@@ -25,7 +25,7 @@
       server_name: "{{ ntpservers }}"
       <<: *login
   - name: Set Timezone
-    netapp.ontap.na_ontap_cluster_config:
+    na_ontap_cluster_config:
       timezone: 'Europe/Brussels'
       use_rest: ALWAYS
       <<: *login
