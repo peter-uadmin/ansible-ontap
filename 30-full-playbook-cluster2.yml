@@ -13,7 +13,7 @@
    - var_cluster2.yml
   tasks:
   - name: Install Licenses
-    na_ontap_cluster:
+    na_ontap_license:
       state: present
       license_code: "{{ item }}"
       <<: *login
