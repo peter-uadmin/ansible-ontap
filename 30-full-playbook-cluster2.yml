@@ -25,9 +25,9 @@
       server_name: "{{ ntpservers }}"
       <<: *login
   - name: Set Timezone
-    na_ontap_cluster_config:
-      command: ['time', '-timezone', 'Europe/Brussels']
-      privilege: admin
+    netapp.ontap.na_ontap_cluster_config:
+      timezone: 'Europe/Brussels'
+      use_rest: ALWAYS
       <<: *login
   - name: Create and Online New Data Aggregate's
     na_ontap_aggregate:
