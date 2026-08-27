@@ -24,11 +24,6 @@
       version: auto
       server_name: "{{ ntpservers }}"
       <<: *login
-  - name: Set Timezone
-    na_ontap_clock:
-      timezone: 'Europe/Brussels'
-      use_rest: ALWAYS
-      <<: *login
   - name: Create and Online New Data Aggregate's
     na_ontap_aggregate:
       state: present
