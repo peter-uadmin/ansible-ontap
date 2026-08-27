@@ -28,7 +28,7 @@
       validate_certs:   false
       use_rest:         Always
   vars_files:
-    - global_nas.vars
+    - global.vars
   collections:
     - netapp.ontap
 
