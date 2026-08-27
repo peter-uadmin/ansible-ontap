@@ -25,11 +25,11 @@
       vserver : cluster2  
     igroups:
     - name: jumphost_igroup
-      initiators: iqn.1991-05.com.microsoft:jumphost.demo.netapp.com
+      initiators: iqn.1991-05.com.microsoft:jumphost.uadmin.intranet
       ostype: windows
       vserver: svm21
     - name: rhel1_igroup
-      initiators: iqn.1994-05.com.redhat:rhel1.demo.netapp.com
+      initiators: iqn.1994-05.com.redhat:rhel1.uadmin.intranet
       ostype: linux
       vserver: svm21
   tasks:
