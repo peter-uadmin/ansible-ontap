@@ -25,7 +25,7 @@
       server_name: "{{ ntpservers }}"
       <<: *login
   - name: Set Timezone
-    na_ontap_command:
+    na_ontap_cluster_config:
       command: ['time', '-timezone', 'Europe/Brussels']
       privilege: admin
       <<: *login
