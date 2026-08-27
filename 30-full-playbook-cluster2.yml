@@ -15,7 +15,7 @@
   - name: Install Licenses
     na_ontap_license:
       state: present
-      license_code: "{{ item }}"
+      license_codes: "{{ item }}"
       <<: *login
     with_items: "{{ licenses }}"
   - name: Set NTP
