@@ -4,7 +4,7 @@
   name: NetApp cluster2 System Setup
   vars:
     login: &login
-     hostname: 192.168.4.202 # NetApp Cluster IP
+     hostname: PRI_CLUS # NetApp Cluster IP
      username: admin # Cluster User
      password: apix1234 # Cluster Password
      https: true
