@@ -25,5 +25,18 @@
           enabled:      true
       comment:          Created with Ansible
       <<: *input
+  - name: Create management interface on primary SVM
+    na_ontap_interface:
+      state:                 present
+      interface_name:        "{{ PRI_SVM }}"
+      vserver:               "{{ PRI_SVM }}"
+      address:               "{{ PRI_SVM_IP }}"
+      netmask:               "{{ PRI_SVM_NETMASK }}"
+      home_node:             "{{ PRI_CLU_NODE1 }}"
+      home_port:             "{{ PRI_MGMT_PORT }}"
+      <<: *input
+      service_policy:        "default-management"
+      firewall_policy:       mgmt
+      role:                  data
 
 
