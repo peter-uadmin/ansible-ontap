@@ -1,0 +1,48 @@
+---
+- name: Install ONTAP licenses
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - p_global.vars
+
+  vars:
+    ontap_licenses:
+      - "SMKQROWJNQYQSDAAAAAAAAAAAAAA"
+      - "YVUCRRRRYVHXCFABGAAAAAAAAAAA"
+      - "WKQGSRRRYVHXCFABGAAAAAAAAAAA"
+      - "SOHOURRRYVHXCFABGAAAAAAAAAAA"
+      - "YBSOYRRRYVHXCFABGAAAAAAAAAAA"
+      - "KQSRRRRRYVHXCFABGAAAAAAAAAAA"
+      - "MBXNQRRRYVHXCFABGAAAAAAAAAAA"
+      - "QDDSVRRRYVHXCFABGAAAAAAAAAAA"
+      - "CYAHWRRRYVHXCFABGAAAAAAAAAAA"
+      - "GUJZTRRRYVHXCFABGAAAAAAAAAAA"
+      - "OSYVWRRRYVHXCFABGAAAAAAAAAAA"
+      - "UZLKTRRRYVHXCFABGAAAAAAAAAAA"
+      - "EJFDVRRRYVHXCFABGAAAAAAAAAAA"
+      - "MHEYKUNFXMSMUCEZFAAAAAAAAAAA"
+      - "KWZBMUNFXMSMUCEZFAAAAAAAAAAA"
+      - "GARJOUNFXMSMUCEZFAAAAAAAAAAA"
+      - "MNBKSUNFXMSMUCEZFAAAAAAAAAAA"
+      - "YBCNLUNFXMSMUCEZFAAAAAAAAAAA"
+      - "ANGJKUNFXMSMUCEZFAAAAAAAAAAA"
+      - "EPMNPUNFXMSMUCEZFAAAAAAAAAAA"
+      - "QJKCQUNFXMSMUCEZFAAAAAAAAAAA"
+      - "UFTUNUNFXMSMUCEZFAAAAAAAAAAA"
+      - "CEIRQUNFXMSMUCEZFAAAAAAAAAAA"
+      - "ILVFNUNFXMSMUCEZFAAAAAAAAAAA"
+
+  tasks:
+
+    - name: Install ONTAP licenses
+      netapp.ontap.na_ontap_license:
+        state: present
+        license_codes: "{{ ontap_licenses }}"
+        hostname: "{{ PRI_CLU }}"
+        username: "{{ PRI_CLU_USER }}"
+        password: "{{ PRI_CLU_PASS }}"
+        https: true
+        validate_certs: false
+        use_rest: always
+
