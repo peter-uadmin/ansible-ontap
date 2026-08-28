@@ -10,7 +10,7 @@
       validate_certs: false
       use_rest: Always
   vars_files:
-    - global.vars
+    - p_global.vars
   collections:
     - netapp.ontap
 
