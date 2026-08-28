@@ -68,6 +68,3 @@ licenses:
 - ILVFNUNFXMSMUCEZFAAAAAAAAAAA
 
 nfsclientmatchsubnet: 192.168.4.0/24 # Allow this subnet to access NFS
-  #subnetname: Demo # NFS Subnet Name
-  #subnetnetwork: 192.168.4.0/24 # NFS Network Subnet
-  #subnetiprange: ["192.168.4.135-192.168.4.139"] # NFS LIF IP within the NFS subnet pool
