@@ -1,23 +1,23 @@
 ---
 - hosts: localhost
   gather_facts: false
-  name: NetApp cluster2 System Setup
+  name: NetApp cluster1 System Setup
   vars:
     login: &login
-     hostname: 192.168.4.102                                      # NetApp Cluster IP
-     username: admin                                              # Cluster User
-     password: apix1234                                           # Cluster Password
-     https: true
+     hostname: "{{ PRI_CLU }}" 
+     username: "{{ PRI_CLU_USER }}"                                              # Cluster User
+     password: "{{ PRI_CLU_PASS }}"                                              # Cluster User                                           # Cluster Password
+     https: false 
      validate_certs: false
   vars_files:
-   - var_nfs.yml
+   - global_nas_vars
   tasks:
   - name: Create and Online New Data Aggregate's
     na_ontap_aggregate:
       state: present
       service_state: online
-      nodes: "{{ item.node }}"
-      name: "{{ item.name }}"
+      nodes: "{{ PRI_CLU }}"
+      name: "{{ PRI_AGGR_01 }}"
       disk_count: "{{ item.diskcount }}"
       wait_for_online: true
       time_out: 300
